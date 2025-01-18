@@ -37,9 +37,9 @@ def Contact(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         email = request.POST.get('email')
-        message = request.POST.get('message')  # message ustunini ham o'qish kerak
+        message = request.POST.get('message')  
         
-        if name and  email and message:  # Malumotlar to'liq kiritilganligini tekshiramiz
+        if name and  email and message:  
             contact_data = ContactMessage(name=name, email=email, message=message)
             contact_data.save()
             return render(request, 'contact.html', {'message': 'Ma\'lumotlar muvaffaqiyatli saqlandi.'})
